@@ -1,0 +1,249 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.header{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.headerfixed{
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 5px 20px #000000;
+    background-color: #C8963F;
+    padding: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    justify-content: center;
+
+    border-radius: 10px;
+    margin-right: 25px;
+}
+
+.menu-img{
+    display: block;
+    align-items: left;
+    margin-left: 25px;
+    transition: transform .7s ease-in-out;
+
+}
+
+.menu-img:hover{
+        transform: rotate(90deg);
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+}
+
+.menu li a{
+    color: lightgray;
+    display: block;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 10px 20px 10px 20px;
+
+    border-radius: 10px;
+}
+
+.menu li a:hover{
+    color: white;
+    display: block;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: #333;
+}
+
+h1{ 
+    color: white;
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+
+}
+
+.item h2:hover{
+    color: white;
+    display: block;
+    text-decoration: none;
+    background-color: #333;
+}
+
+p{
+ font-weight: bold;
+}
+
+.nospace{
+    opacity: 0;
+}
+
+/* GRID */
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px 0px 20px;
+    border: 0px solid white;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    'sideimag item item'
+    'sideimag item item'
+    'sideimag item item'
+    'footer footer footer';
+
+    grid-gap: 20px;
+}
+
+img {
+    display: block;
+  }
+
+.image-container{
+    position: relative;
+}
+
+.main-banner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    filter: brightness(60%);
+    -webkit-mask-image: linear-gradient(to top, transparent 10%, black 50%);
+}
+
+.banner img{
+    height : 100%;
+    width: 100%;
+}
+
+.image-text {
+    position: absolute;
+    top: 40%;
+    left: 34%; 
+    transform: translate(-20%, -50%);
+    z-index: 1;
+    color: white;
+    font-size: 70px;
+    font-weight: 900;
+
+  }
+
+.sideimag{
+    max-width: 350px;
+    min-width: 250px;
+    grid-area: 'sideimag';
+    width: 300px;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: gray;
+    grid-row: sideimag;
+}
+
+.item{
+    text-align: center;
+    max-width: 350px;
+    min-width: 270px;
+    grid-area: 'item';
+    width: 300px;
+    height: 320px;
+    border-radius: 20px;
+    background-color: gray;
+}
+
+.footer{
+    grid-area: 'footer';
+    width: auto;
+    height: 700px;
+    border-radius: 20px;
+    background-color: gray;
+    grid-column: footer;
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+}
+
+.text-box{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 20px;
+    position: relative;
+    top: -92%;
+    left: 27%;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #1E1E1E;
+    height: 220px;
+    width: 700px;
+}
+
+.sub-title{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    font: normal 30px sans-serif;
+}
+
+.text{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    font: normal 15px sans-serif;
+}
+@media (max-width: 820px){
+    .container{
+        grid-template-areas: 
+        'sideimag item'
+        'sideimag item'
+        'sideimag item'
+        'sideimag item'
+        'sideimag item'
+        'sideimag item'
+        'footer footer';
+    }
+}
+
+@media(max-width: 520px){
+    .sideimag{
+        height: 200px;
+
+    }
+    .container{
+        grid-template-areas: 
+        'sideimag'
+        'item'
+        'item'
+        'item'
+        'item'
+        'item'
+        'footer';
+    }
+}
