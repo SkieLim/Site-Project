@@ -11,7 +11,6 @@ body{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 .header{
     position: absolute;
     z-index: 10;
@@ -176,13 +175,44 @@ img {
     background-color: gray;
 }
 
+.footer-logo img {
+    max-width: 80%; 
+    height: auto;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-midias img{
+    max-width: 15%;
+    height: auto;
+}
+
 .footer{
+    padding: 10px;
     grid-area: 'footer';
-    width: auto;
-    height: 700px;
-    border-radius: 20px;
-    background-color: gray;
+    width: 100%;
+    background-color: #C8963F;
     grid-column: footer;
+    bottom: 0;
+    color: whitesmoke;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+    padding: 2px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
 }
 
 .banner{
