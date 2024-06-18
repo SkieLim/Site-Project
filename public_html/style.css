@@ -21,21 +21,25 @@ body{
     top: 0;
     left: 0;
     transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 3;
 
 }
 
 #body-header.transparente{
     background-color: transparent;
     box-shadow: none;
+    z-index: 3;
 }
 
 #body-header.solid{
     background-color: #C8963F;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
 }
 
 .menu-container{
     position: relative;
+    z-index: 3;
 }
 
 .menu-icon{
@@ -44,15 +48,12 @@ body{
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease;
+    z-index: 3;
 }
 
-.menu-icon::before, .menu-icon::after {
-    display: block;
-    width: 30px;
-    height: 5px;
-    background-color: #000;
-    position: absolute;
-    transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.3s; 
 }
 
 .menu-icon.rotate::before{
@@ -64,49 +65,66 @@ body{
 }
 
 .sidebar{
-    width: 250px;
-    height: 100%;
+    width: 100%;
+    height: 250px;
     background-color: #C8963F;
     color: white;
     position: fixed;
     padding: 20px;
-    left: -250px;
-    transition: left 0.3s ease;
+    top: -250px;
+    left: 0;
+    transition: top 0.3s ease;
+    z-index: -1;
 }
 
 .sidebar.open {
-    left: 0;
+    top: 12%;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    z-index: 1;
 }
 
 .sidebar ul li {
     padding: 15px;
+    z-index: 1;
 }
 
 .sidebar ul li a {
     color: white;
     text-decoration: none;
+    z-index: 1;
 }
 
 .logo{
     height: 5em;
+    z-index: 3;
 }
 
 .main-banner{
     width: auto;
     height: 945px;
     overflow: hidden;
-    
+    position: relative;
 }
 
 .banner-img{
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.main-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Gradiente branco */
+    pointer-events: none; /* Permite a interação com elementos abaixo */
 }
 
 .image-text-box{
@@ -122,53 +140,39 @@ body{
     /* transform: translate(-20%, -50%); */
     z-index: 1;
     font-weight: 900;
+    line-height: 144px;
     color: white;
     font-size: 70px;
-    font-weight: 900;
   }
 
-.text-box{
+  .txt-box{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    margin: 0px;
-    padding: 20px;
-    position: relative;
-    border-radius: 20px;
-    color: #ffffff;
-    top: -40%;
-    left: 20%;
-    background-color: #1E1E1E;
+    background-color: black;
     opacity: 0.8;
-    height: 500px;
     width: 1200px;
-}
+    height: 500px;
+  }
 
-.sub-title{
+  .txt-box-logo{
+    height: 3em;
+    width: auto;
+    position: relative;
+    
+  }
+
+  .image-txt-box{
+    object-fit: contain;
     width: 100%;
     height: 100%;
-    position: relative;
-    font: normal 30px sans-serif;
-    padding-left: 5px;
-}
+  }
 
-.sub-title.border{
-    border-left: 1px solid white;
-    padding-left: 30px;
-}
+  .sub-title-border{
+    border-left: white;
+  }
 
-.text-box-logo img{
-    max-width: 95%; 
-    height: auto;
-    align-items: center;
-    padding: 10px;
-    padding-top: 30px;
-    padding-left: 10px;
-}
+  .txt-box-text{
+    color: white;
+  }
 
-.text{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    font: normal 15px sans-serif;
-}
