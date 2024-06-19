@@ -40,4 +40,50 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 //END SIDEBAR
+
+//CAROUSEL CARDS
+
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const carouselInner = document.querySelector('.carousel-inner');
+    const cards = document.querySelectorAll('.card');
+    const totalCards = cards.length;
+    const cardWidth = cards[0].offsetWidth;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = totalCards - 1;
+    } else if (currentIndex >= totalCards) {
+        currentIndex = 0;
+    }
+
+    const offset = -currentIndex * cardWidth;
+    carouselInner.style.transform = `translateX(${offset}px)`;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".card");
+    const contents = document.querySelectorAll(".content");
+
+    cards.forEach(card => {
+        card.addEventListener("click", function() {
+            const contentId = this.getAttribute("data-content");
+            showContent(contentId);
+        });
+    });
+
+    function showContent(contentId) {
+        contents.forEach(content => {
+            if (content.id === contentId) {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    }
+});
+//END CAROUSEL CARDS

@@ -13,6 +13,12 @@ body{
     background-repeat: repeat;
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #body-header{
     display: flex;
     align-items: center;
@@ -145,9 +151,9 @@ body{
     line-height: 144px;
     color: white;
     font-size: 70px;
-  }
+}
 
-  .txt-box{
+.txt-box{
     position: absolute;
     top: 65%;
     left: 18%;
@@ -160,35 +166,119 @@ body{
     width: 1200px;
     height: 500px;
     padding: 30px;
-  }
+}
 
-  .txt-box-logo{
+.txt-box-logo{
     height: 50em;
     width: auto;
     position: relative;
     margin-right: 30px;
-    
-  }
+}
 
-  .image-txt-box{
+.image-txt-box{
     object-fit: contain;
     width: 100%;
     height: 100%;
-  }
-   
-  .linha-vertical {
+}
+
+.linha-vertical {
     padding: 30px;
     height: 350px;
     border-left: 2.5px solid white;
-  }
-  .txt-box-text-area{
+}
+.txt-box-text-area{
     padding: 30px;
-  }
+}
 
-  .txt-box-text{
+.txt-box-text{
     text-align: center;
     font-size: 14px;
     font-weight: 100;
     color: white;
-  }
+}
 
+.txt-area-paginas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15em;
+    margin-bottom: 1em;
+}
+
+.txt-paginas{
+font-size: 60px;
+font-weight: 900;
+}
+
+.carousel-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    flex: 0 0 33.333333%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+    display: block;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.prev, .next {
+    position: absolute;
+    transform: translateY(-50%);
+    background-color: #c8963f93;
+    font-size: 30px;
+    color: white;
+    border: none;
+    padding: 20px 30px 20px 32px;
+    border-radius: 1000px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 150px;
+}
+
+.next {
+    right: 150px;
+}
+
+.contents {
+    margin: 20px;
+    padding: 10px;
+}
+
+.content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
