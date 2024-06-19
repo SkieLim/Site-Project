@@ -68,22 +68,35 @@ function moveCarousel(direction) {
 document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".card");
     const contents = document.querySelectorAll(".content");
+    let activeContent = null;
 
     cards.forEach(card => {
         card.addEventListener("click", function() {
             const contentId = this.getAttribute("data-content");
-            showContent(contentId);
-        });
-    });
+            const contentElement = document.getElementById(contentId);
 
-    function showContent(contentId) {
-        contents.forEach(content => {
-            if (content.id === contentId) {
-                content.style.display = "block";
+            if (activeContent && activeContent === contentElement) {
+                contentElement.classList.remove("active");
+                activeContent = null;
             } else {
-                content.style.display = "none";
+                contents.forEach(content => content.classList.remove("active"));
+                contentElement.classList.add("active");
+                activeContent = contentElement;
             }
         });
-    }
+    });
 });
+
+
 //END CAROUSEL CARDS
+
+document.addEventListener("DOMContentLoaded", function() {
+    const openingAnimation = document.getElementById('opening-animation');
+    const mainContent = document.getElementById('main-content');
+
+    setTimeout(() => {
+        openingAnimation.style.display = 'none';
+        mainContent.style.display = 'block';
+    }, 3000); // 3 seconds
+});
+
