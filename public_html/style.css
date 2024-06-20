@@ -130,7 +130,7 @@ body{
     width: auto;
 }
 
-.main-banner{
+/* .main-banner{
     width: auto;
     height: 945px;
     overflow: hidden;
@@ -152,6 +152,36 @@ body{
     height: 20%;
     background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
     pointer-events: none;
+} */
+
+.main-banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 910px;
+    background-image: url(images/main-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-color: #726349;
+}
+
+.main-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+
+.banner-text{
+    font-size: 90px;
+    font-weight: 900;
+    color: white;
 }
 
 .image-text-box{
@@ -238,7 +268,7 @@ body{
 .subtitle-paginas{
     font-size: 18px;
     font-weight: 700;
-    color: #3EC778;
+    color: #726349;
 }
 
 .carousel-area{
@@ -293,7 +323,7 @@ body{
 .prev, .next {
     position: absolute;
     transform: translateY(-300%);
-    background-color: #3ec777b2;
+    background-color: #726349bb;
     font-size: 30px;
     color: white;
     border: none;
@@ -320,7 +350,6 @@ body{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-    padding: 00px 10px;
     background-color: rgba(0, 0, 0, 0.432);
     border-radius: 30px;
     box-sizing: border-box;
@@ -401,24 +430,32 @@ body{
     margin-bottom: 10em;
 }
 
+.dia-area{
+    background-color: #726349;
+    padding: 15px;
+    box-shadow: 1px 6px 8px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.nome-dia{
+    font-size: 25px;
+    font-weight: 900;
+    color: white;
+}
+
 .describ-cardapio{
     background-color: white;
     padding: 15px;
     box-shadow: 1px 6px 8px 2px rgba(0, 0, 0, 0.2);
     text-align: center;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .describ-cardapio-itens{
     display: block;
     align-items: center;
     justify-content: center;
-}
-
-.nome-dia{
-    font-size: 20px;
-    font-weight: 900;
-    color: #3EC778;
 }
 
 .describ-cardapio li{
@@ -432,7 +469,84 @@ body{
 .linha-horizontal{
     padding: 5px;
     border-bottom: 1px solid black;
+    margin-bottom: 20px;
 }
+
+.cta-area{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('images/panificadora-social-doce.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-color: #726349;
+    margin-bottom: 10em;
+    padding: 10em;
+}
+
+.cta-filter{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background: #c8963f4d;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.text-cta-area{
+    display: block;
+    width: 50%;
+    z-index: 2;
+}
+
+.titulo-cta{
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+}
+
+.texto-cta{
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+
+.button-cta-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    z-index: 2;
+}
+
+.button-cta button{
+    padding: 30px 65px 30px 65px;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #726349;
+    border-radius: 30px;
+    border: 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.button-cta button:hover{
+    color: white;
+    background-color: rgb(119, 105, 81)
+}
+
+.button-cta button:active {
+    background-color: rgb(119, 105, 81);
+    box-shadow: 2px rgba(0, 0, 0, 0.15);
+    transform: translateY(4px);
+  }
 
 .carousel-rest-container{
     display: block;
@@ -497,7 +611,7 @@ font-weight: 900;
 .prevrest, .nextrest {
     position: absolute;
     transform: translateY(-30%);
-    background-color: #3ec777b2;
+    background-color: #726349bb;
     font-size: 30px;
     color: white;
     border: none;
