@@ -56,8 +56,8 @@ function moveCarousel(direction) {
     currentIndex += direction;
 
     if (currentIndex < 0) {
-        currentIndex = totalCards - 1;
-    } else if (currentIndex >= totalCards) {
+        currentIndex = totalCards - 3;
+    } else if (currentIndex >= totalCards - 2) {
         currentIndex = 0;
     }
 
@@ -117,35 +117,13 @@ function moveRestCarousel(directionrest) {
     correntIndexRest += directionrest;
 
     if (correntIndexRest < 0) {
-        correntIndexRest = totalCardsRest - 1;
-    } else if (correntIndexRest >= totalCardsRest) {
-        correntIndexRest = null;
+        correntIndexRest = totalCardsRest - 4;
+    } else if (correntIndexRest >= totalCardsRest - 3) {
+        correntIndexRest = 0;
     }
 
     const offset = -correntIndexRest * cardRestWidth;
     carouselInnerRest.style.transform = `translateX(${offset}px)`;
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const cardRest = document.querySelectorAll(".cardrest");
-    const contentrests = document.querySelectorAll(".contentrest");
-    let activeContentRest = null;
-
-    cardRest.forEach(cardrest => {
-        cardrest.addEventListener("click", function() {
-            const contentrestId = this.getAttribute("data-contentrest");
-            const contentrestElement = document.getElementById(contentrestId);
-
-            if (activeContentRest && activeContentRest === contentrestElement) {
-                contentrestElement.classList.remove("active");
-                activeContentRest = null;
-            } else {
-                contentrests.forEach(contentrest => contentrest.classList.remove("active"));
-                contentrestElement.classList.add("active");
-                activeContentRest = contentrestElement;
-            }
-        });
-    });
-});
 
 //END CAROUSEL RESTAURANT
