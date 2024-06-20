@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //END CAROUSEL CARDS
 
+//CONTENT CARD OPEN ANIMATION
+
 document.addEventListener("DOMContentLoaded", function() {
     const openingAnimation = document.getElementById('opening-animation');
     const mainContent = document.getElementById('main-content');
@@ -97,6 +99,53 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
         openingAnimation.style.display = 'none';
         mainContent.style.display = 'block';
-    }, 3000); // 3 seconds
+    }, 3000); // 3 sec
 });
 
+//END CONTENT CARD OPEN ANIMATION
+
+//CAROUSEL RESTAURANT
+
+let correntIndexRest = 0
+
+function moveRestCarousel(directionrest) {
+    const carouselInnerRest = document.querySelector('.carousel-inner-rest');
+    const cardRest = document.querySelectorAll('.cardrest');
+    const totalCardsRest = cardRest.length;
+    const cardRestWidth = cardRest[0].offsetWidth;
+
+    correntIndexRest += directionrest;
+
+    if (correntIndexRest < 0) {
+        correntIndexRest = totalCardsRest - 1;
+    } else if (correntIndexRest >= totalCardsRest) {
+        correntIndexRest = null;
+    }
+
+    const offset = -correntIndexRest * cardRestWidth;
+    carouselInnerRest.style.transform = `translateX(${offset}px)`;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cardRest = document.querySelectorAll(".cardrest");
+    const contentrests = document.querySelectorAll(".contentrest");
+    let activeContentRest = null;
+
+    cardRest.forEach(cardrest => {
+        cardrest.addEventListener("click", function() {
+            const contentrestId = this.getAttribute("data-contentrest");
+            const contentrestElement = document.getElementById(contentrestId);
+
+            if (activeContentRest && activeContentRest === contentrestElement) {
+                contentrestElement.classList.remove("active");
+                activeContentRest = null;
+            } else {
+                contentrests.forEach(contentrest => contentrest.classList.remove("active"));
+                contentrestElement.classList.add("active");
+                activeContentRest = contentrestElement;
+            }
+        });
+    });
+});
+
+//END CAROUSEL RESTAURANT
