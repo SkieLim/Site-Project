@@ -138,7 +138,7 @@ body{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 910px;
+    height: 900px;
     background-image: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(images/main-banner.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -149,17 +149,6 @@ body{
     top: 0;
     bottom: 0;
 }
-
-/* .main-banner-gradient {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
-    pointer-events: none;
-} */
 
 .banner-text{
     font-size: 90px;
@@ -311,6 +300,7 @@ body{
 .contents {
     margin: 20px;
     padding: 10px;
+    width: 100%;
 }
 
 .content {
@@ -323,7 +313,7 @@ body{
 }
 
 .content.active {
-    max-height: 1000px;
+    max-height: 100%;
     padding: 50px 100px 50px 100px;
     background-color: rgba(0, 0, 0, 0.432);
     box-shadow: 1px 6px 8px 2px rgba(0, 0, 0, 0.2);
@@ -346,6 +336,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .img-content{
@@ -548,6 +539,7 @@ body{
     width: 80%;
     overflow: hidden;
     position: relative;
+    padding-bottom: 30px;
 }
 
 
@@ -579,6 +571,7 @@ body{
     text-align: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    font-size: 15px;
 }
 
 .linha-setas-rest{
@@ -608,6 +601,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .txt-area-form{
@@ -780,7 +774,6 @@ body{
     margin-top: 10em;
     background-color: #C8963F;
     padding: 50px 100px;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
 }
 
@@ -909,18 +902,6 @@ body{
         width: 110%;
     }
 
-    .main-banner::after{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 110%;
-        height: 20%;
-        background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
-        pointer-events: none;
-        
-    }
-
     .txt-box-area{
         display: flex;
         justify-content: center;
@@ -1030,6 +1011,26 @@ body{
     .linha-setas-rest{
         margin-top: -15%;
         margin-bottom: 20%;
+    }
+
+    .contents {
+        margin: 0em 0em 0em 0em;
+        width: 110%;
+    }
+
+    .content.active {
+        max-height: 100%;
+    }
+
+    .content-area{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .img-content{
+        width: 600px;
     }
 
     .txt-area-form{
@@ -1164,18 +1165,6 @@ body{
         width: 142%;
     }
 
-    .main-banner::after{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 142%;
-        height: 20%;
-        background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
-        pointer-events: none;
-        
-    }
-
     .txt-box-area{
         display: flex;
         justify-content: center;
@@ -1284,6 +1273,26 @@ body{
     .linha-setas-rest{
         margin-top: -30%;
         margin-bottom: 30%;
+    }
+
+    .contents {
+        margin: 0em 0em 0em 0em;
+        width: 140%;
+    }
+
+    .content.active {
+        max-height: 100%;
+    }
+
+    .content-area{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .img-content{
+        width: 300px;
     }
 
     .txt-area-form{
@@ -1417,19 +1426,6 @@ body{
 
     .main-banner{
         width: 335%;
-        height: 820px;
-    }
-
-    .main-banner::after{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 330%;
-        height: 20%;
-        background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
-        pointer-events: none;
-        
     }
 
     .txt-box-area{
@@ -1465,16 +1461,25 @@ body{
         margin-top: -300%;
         margin-bottom: 100%;
     }
-    
-    .prev, .next {
-        position: sticky;
-        background-color: #726349bb;
-        font-size: 30px;
-        padding: 20px 30px 20px 30px;
-        color: white;
-        border: none;
-        border-radius: 1000px;
-        cursor: pointer;
+
+    .contents {
+        margin: 0em 0em 0em 0em;
+        width: 330%;
+    }
+
+    .content.active {
+        max-height: 100%;
+    }
+
+    .content-area{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .img-content{
+        width: 300px;
     }
 
     .div-cardapio{
