@@ -139,7 +139,7 @@ body{
     justify-content: center;
     width: 100%;
     height: 910px;
-    background-image: url(images/main-banner.png);
+    background-image: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(images/main-banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -150,7 +150,7 @@ body{
     bottom: 0;
 }
 
-.main-banner::after {
+/* .main-banner-gradient {
     content: "";
     position: absolute;
     bottom: 0;
@@ -159,7 +159,7 @@ body{
     height: 20%;
     background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
     pointer-events: none;
-}
+} */
 
 .banner-text{
     font-size: 90px;
@@ -167,22 +167,6 @@ body{
     color: white;
 }
 
-.image-text-box{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 30%;
-    left: 30%;
-}
-
-.image-text {
-    z-index: 1;
-    font-weight: 900;
-    line-height: 144px;
-    color: white;
-    font-size: 70px;
-}
 
 .txt-box-area{
     display: flex;
@@ -269,6 +253,7 @@ body{
     width: 80%;
     overflow: hidden;
     position: relative;
+    margin-bottom: -25%;
 }
 
 .carousel-inner {
@@ -301,37 +286,31 @@ body{
     border-bottom-right-radius: 20px;
 }
 
-.nav-buttoms{
+.linha-setas{
     display: flex;
     align-items: center;
-    justify-content: center;
-    top: 50%;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: -15%;
+    margin-bottom: 15%;
 }
 
 .prev, .next {
-    position: absolute;
-    transform: translateY(-300%);
+    position: sticky;
     background-color: #726349bb;
     font-size: 30px;
+    padding: 20px 30px 20px 30px;
     color: white;
     border: none;
-    padding: 20px 30px 20px 32px;
     border-radius: 1000px;
     cursor: pointer;
-}
-
-.prev {
-    left: 150px;
-}
-
-.next {
-    right: 150px;
 }
 
 .contents {
     margin: 20px;
     padding: 10px;
-    margin-top: -25%;
 }
 
 .content {
@@ -391,6 +370,10 @@ body{
     
 }
 
+.div-cardapio{
+    margin: auto;
+}
+
 .txt-area-cardapio{
     display: flex;
     align-items: center;
@@ -404,18 +387,17 @@ body{
     font-weight: 900;
 }
 
-.linha-cardapio{
+.linha-card-table{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1em 12em 0em 12em;
+    justify-content: center;
 }
 
 .card-cardapio{
-    flex: 0 0 20%;
+    flex: 0 0 25%;
     box-sizing: border-box;
     padding: 10px;
-    margin-bottom: 10em;
+    margin-bottom: 1em;
 }
 
 .dia-area{
@@ -450,6 +432,7 @@ body{
     padding-top: 10px;
     text-decoration: none;
     font-weight: 300;
+    color: #000;
     display: block;
     transition: all 0.3s ease;
 }
@@ -471,6 +454,7 @@ body{
     background-size: cover;
     background-position: center bottom;
     background-color: #726349;
+    margin-top: 10em;
     margin-bottom: 10em;
     padding: 10em;
 }
@@ -550,8 +534,8 @@ body{
 }
 
 .txt-restaurant{
-font-size: 60px;
-font-weight: 900;
+    font-size: 60px;
+    font-weight: 900;
 }
 
 .carousel-area-rest{
@@ -565,6 +549,7 @@ font-weight: 900;
     overflow: hidden;
     position: relative;
 }
+
 
 .carousel-inner-rest {
     display: flex;
@@ -596,30 +581,47 @@ font-weight: 900;
     border-bottom-right-radius: 20px;
 }
 
+.linha-setas-rest{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: -15%;
+    margin-bottom: 15%;
+}
+
 .prevrest, .nextrest {
-    position: absolute;
-    transform: translateY(-30%);
+    position: sticky;
     background-color: #726349bb;
     font-size: 30px;
+    padding: 20px 30px 20px 30px;
     color: white;
     border: none;
-    padding: 20px 30px 20px 32px;
     border-radius: 1000px;
     cursor: pointer;
 }
 
-.prevrest {
-    left: 150px;
-}
-
-.nextrest {
-    right: 150px;
-}
-
 .forms-line{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.txt-area-form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.txt-form{
+    font-size: 60px;
+    font-weight: 900;
 }
 
 .form-area{
@@ -640,7 +642,7 @@ font-weight: 900;
 }
 
 .img-container-forms img{
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -687,6 +689,14 @@ font-weight: 900;
     background-color: rgb(119, 105, 81);
     box-shadow: 2px rgba(0, 0, 0, 0.15);
     transform: translateY(4px);
+}
+
+.faq-area{
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10em;
 }
 
 .faqs-container {
@@ -767,13 +777,15 @@ font-weight: 900;
 }
 
 .footer{
+    margin-top: 10em;
     background-color: #C8963F;
-    padding: 50px 0;
+    padding: 50px 100px;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
 }
 
 .container-footer{
-    max-width: 1400px;
+    width: 100%;
     padding: 0 4%;
     margin: auto;
 }
@@ -892,8 +904,257 @@ font-weight: 900;
 }
 
 @media screen and (max-width: 1545px){
+
     .main-banner{
         width: 110%;
+    }
+
+    .main-banner::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 110%;
+        height: 20%;
+        background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
+        pointer-events: none;
+        
+    }
+
+    .txt-box-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 110%;
+    }
+
+    .txt-box{
+        position: relative;
+        width: 1000px;
+    }
+
+    .txt-area-paginas{
+        width: 110%;
+    }
+
+    .txt-subarea-paginas{
+        width: 110%;
+    }
+
+    .carousel-area{
+        width: 110%;
+    }
+
+    .card {
+        flex: 0 0 33.33333%;
+    }
+
+    .linha-setas{
+        width: 110%;
+        margin-top: -15%;
+        margin-bottom: 15%;
+    }
+    
+    .prev, .next {
+        position: sticky;
+        background-color: #726349bb;
+        font-size: 30px;
+        padding: 20px 30px 20px 30px;
+        color: white;
+        border: none;
+        border-radius: 1000px;
+        cursor: pointer;
+    }
+
+    .div-cardapio{
+        width: 110%;
+        padding: 0px 5em;
+    }
+    
+    .linha-cardapio{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0em 1em 0em 1em;
+    }
+
+    .linha-card-table{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-cardapio{
+        flex: 0 0 50%;
+        margin-bottom: 1em;
+    }
+    
+    .nome-dia{
+        font-size: 30px;
+    }
+
+    .describ-cardapio li{
+        padding-top: 5px;
+        font-size: 25px;
+    }
+    
+    .cta-area{
+        width: 110%;
+        padding: 5em 5em 5em 10em;
+    }
+    
+    .cta-filter{
+        width: 110%;
+    }
+
+    .titulo-cta{
+        font-size: 40px;
+    }
+    
+    .texto-cta{
+        font-size: 25px;
+        font-weight: 400;
+        color: white;
+    }
+    
+    .carousel-rest-container{
+        width: 110%;
+    }
+
+    .cardrest {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        flex: 0 0 25%;
+    }
+
+    .linha-setas-rest{
+        margin-top: -15%;
+        margin-bottom: 20%;
+    }
+
+    .txt-area-form{
+        width: 110%;
+    }
+
+    .forms-line{
+        width: 110%;
+    }
+
+    .faq-area{
+        width: 110%;
+    }
+
+    .footer{
+        width: 110%;
+    }
+    
+    .container-footer{
+        width: 90%;
+    }
+    
+    .image-footer{
+        width: 15em;
+    }
+    
+    .row-footer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .footer-col{
+        width: 25%;
+        padding: 0 15px;
+    }
+    
+    .footer-col h4{
+        font-size: 22px;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 500;
+        position: relative;
+        text-transform: uppercase;
+    }
+    
+    .footer-col ul{
+        list-style: none;
+    }
+    
+    .footer-col ul li{
+        margin: 10px 0;
+    }
+    
+    .footer-col ul li a{
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-col ul li a:hover{
+        color: #cecdcd;
+        padding-left: 10px;
+    }
+    
+    .footer-col .medias-socias{
+        margin-top: 30px;
+    }
+    
+    .footer-col .medias-socias a{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        border-radius: 50%;
+        color: white;
+        border: 1px solid white;
+        transition: all 0.5s ease;
+    }
+    
+    .footer-col .medias-socias a i{
+        font-size: 20px;
+    }
+    
+    .footer-col .medias-socias a:hover{
+        color: #C8963F;
+        background-color: white;
+    }
+    
+    .footer-col .form-sub input{
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        outline: none;
+        border: 1px solid white;
+        color: white;
+        background-color: #C8963F;
+    }
+    
+    .footer-col .form-sub input::placeholder{
+        color: white;
+    }
+    
+    .footer-col .form-sub button{
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px; 
+        font-size: 17px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #C8963F;
+        border-radius: 3px;
+        font-weight: bold;
+        background-color: white;        
+    }
+    
+    .footer-social{
+        margin-right: -150px;
+        margin-left: 50px;
     }
 }
 
@@ -902,13 +1163,260 @@ font-weight: 900;
     .main-banner{
         width: 142%;
     }
+
+    .main-banner::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 142%;
+        height: 20%;
+        background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
+        pointer-events: none;
+        
+    }
+
+    .txt-box-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 142%;
+    }
+
+    .txt-box{
+        position: relative;
+        width: 1000px;
+    }
+
+    .txt-area-paginas{
+        width: 142%;
+    }
+
+    .txt-subarea-paginas{
+        width: 142%;
+    }
+
+    .carousel-area{
+        width: 142%;
+    }
+
+    .card {
+        flex: 0 0 50%;
+    }
+
+    .linha-setas{
+        width: 142%;
+        margin-top: -50%;
+        margin-bottom: 20%;
+    }
+    
+    .prev, .next {
+        position: sticky;
+        background-color: #726349bb;
+        font-size: 30px;
+        padding: 20px 30px 20px 30px;
+        color: white;
+        border: none;
+        border-radius: 1000px;
+        cursor: pointer;
+    }
+
+    .div-cardapio{
+        width: 142%;
+    }
+    
+    .linha-cardapio{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0em 1em 0em 1em;
+    }
+
+    .linha-card-table{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-cardapio{
+        flex: 0 0 50%;
+        margin-bottom: 1em;
+    }
+    
+    .nome-dia{
+        font-size: 30px;
+    }
+
+    .describ-cardapio li{
+        padding-top: 5px;
+        font-size: 25px;
+    }
+    
+    .cta-area{
+        width: 142%;
+        padding: 5em;
+    }
+    
+    .cta-filter{
+        width: 142%;
+    }
+
+    .titulo-cta{
+        font-size: 40px;
+    }
+    
+    .texto-cta{
+        font-size: 25px;
+        font-weight: 400;
+        color: white;
+    }
+    
+    .carousel-rest-container{
+        width: 142%;
+    }
+
+    .cardrest {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        flex: 0 0 50%;
+    }
+
+    .linha-setas-rest{
+        margin-top: -30%;
+        margin-bottom: 30%;
+    }
+
+    .txt-area-form{
+        width: 142%;
+    }
+
+    .forms-line{
+        width: 142%;
+    }
+
+    .faq-area{
+        width: 142%;
+    }
+
+    .footer{
+        width: 142%;
+    }
+    
+    .container-footer{
+        width: 90%;
+    }
+    
+    .image-footer{
+        width: 15em;
+    }
+    
+    .row-footer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .footer-col{
+        width: 25%;
+        padding: 0 15px;
+    }
+    
+    .footer-col h4{
+        font-size: 22px;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 500;
+        position: relative;
+        text-transform: uppercase;
+    }
+    
+    .footer-col ul{
+        list-style: none;
+    }
+    
+    .footer-col ul li{
+        margin: 10px 0;
+    }
+    
+    .footer-col ul li a{
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-col ul li a:hover{
+        color: #cecdcd;
+        padding-left: 10px;
+    }
+    
+    .footer-col .medias-socias{
+        margin-top: 30px;
+    }
+    
+    .footer-col .medias-socias a{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        border-radius: 50%;
+        color: white;
+        border: 1px solid white;
+        transition: all 0.5s ease;
+    }
+    
+    .footer-col .medias-socias a i{
+        font-size: 20px;
+    }
+    
+    .footer-col .medias-socias a:hover{
+        color: #C8963F;
+        background-color: white;
+    }
+    
+    .footer-col .form-sub input{
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        outline: none;
+        border: 1px solid white;
+        color: white;
+        background-color: #C8963F;
+    }
+    
+    .footer-col .form-sub input::placeholder{
+        color: white;
+    }
+    
+    .footer-col .form-sub button{
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px; 
+        font-size: 17px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #C8963F;
+        border-radius: 3px;
+        font-weight: bold;
+        background-color: white;        
+    }
+    
+    .footer-social{
+        margin-right: -150px;
+        margin-left: 50px;
+    }
     
 }
 
 @media screen and (max-width: 755px) {
 
     .main-banner{
-        width: 330%;
+        width: 335%;
         height: 820px;
     }
 
@@ -924,9 +1432,220 @@ font-weight: 900;
         
     }
 
-    .txt-box{
-        position: absolute;
-        width: 800px;
-        left: 40%;
+    .txt-box-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 330%;
     }
+
+    .txt-box{
+        position: relative;
+        width: 1000px;
+    }
+
+    .txt-area-paginas{
+        width: 330%;
+    }
+
+    .txt-subarea-paginas{
+        width: 330%;
+    }
+
+    .carousel-area{
+        width: 330%;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+
+    .linha-setas{
+        width: 330%;
+        margin-top: -300%;
+        margin-bottom: 100%;
+    }
+    
+    .prev, .next {
+        position: sticky;
+        background-color: #726349bb;
+        font-size: 30px;
+        padding: 20px 30px 20px 30px;
+        color: white;
+        border: none;
+        border-radius: 1000px;
+        cursor: pointer;
+    }
+
+    .div-cardapio{
+        width: 330%;
+    }
+    
+    .linha-cardapio{
+        display: block;
+        padding: 0em 0em 0em 0em;
+    }
+
+    .card-cardapio{
+        flex: 0 0 50%;
+        margin-bottom: 1em;
+    }
+    
+    .nome-dia{
+        font-size: 30px;
+    }
+
+    .describ-cardapio li{
+        padding-top: 5px;
+        font-size: 25px;
+    }
+    
+    .cta-area{
+        margin-top: 10em;
+        width: 330%;
+    }
+    
+    .cta-filter{
+        width: 330%;
+    }
+    
+    .carousel-rest-container{
+        width: 330%;
+    }
+
+    .cardrest {
+        margin-top: 2em;
+        flex: 0 0 100%;
+    }
+
+    .linha-setas-rest{
+        margin-top: -50%;
+        margin-bottom: 50%;
+    }
+
+    .txt-area-form{
+        width: 330%;
+    }
+
+    .forms-line{
+        width: 330%;
+    }
+
+    .faq-area{
+        width: 330%;
+    }
+
+    .footer{
+        width: 330%;
+    }
+    
+    .container-footer{
+        width: 90%;
+    }
+    
+    .image-footer{
+        width: 15em;
+    }
+    
+    .row-footer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .footer-col{
+        width: 25%;
+        padding: 0 15px;
+    }
+    
+    .footer-col h4{
+        font-size: 22px;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 500;
+        position: relative;
+        text-transform: uppercase;
+    }
+    
+    .footer-col ul{
+        list-style: none;
+    }
+    
+    .footer-col ul li{
+        margin: 10px 0;
+    }
+    
+    .footer-col ul li a{
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-col ul li a:hover{
+        color: #cecdcd;
+        padding-left: 10px;
+    }
+    
+    .footer-col .medias-socias{
+        margin-top: 30px;
+    }
+    
+    .footer-col .medias-socias a{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        border-radius: 50%;
+        color: white;
+        border: 1px solid white;
+        transition: all 0.5s ease;
+    }
+    
+    .footer-col .medias-socias a i{
+        font-size: 20px;
+    }
+    
+    .footer-col .medias-socias a:hover{
+        color: #C8963F;
+        background-color: white;
+    }
+    
+    .footer-col .form-sub input{
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        outline: none;
+        border: 1px solid white;
+        color: white;
+        background-color: #C8963F;
+    }
+    
+    .footer-col .form-sub input::placeholder{
+        color: white;
+    }
+    
+    .footer-col .form-sub button{
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px; 
+        font-size: 17px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #C8963F;
+        border-radius: 3px;
+        font-weight: bold;
+        background-color: white;        
+    }
+    
+    .footer-social{
+        margin-right: -150px;
+        margin-left: 50px;
+    }
+
 }

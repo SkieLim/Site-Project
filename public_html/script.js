@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //CAROUSEL CARDS
 
 let currentIndex = 0;
+let startX = 0;
+let isDragging = false;
 
 function moveCarousel(direction) {
     const carouselInner = document.querySelector('.carousel-inner');
@@ -65,9 +67,38 @@ function moveCarousel(direction) {
     carouselInner.style.transform = `translateX(${offset}px)`;
 }
 
+function handleMouseOrTouchStart(event) {
+    startX = event.type.includes('mouse') ? event.pageX : event.touches[0].pageX;
+    isDragging = true;
+}
+
+function handleMouseOrTouchMove(event) {
+    if (!isDragging) return;
+
+    const x = event.type.includes('mouse') ? event.pageX : event.touches[0].pageX;
+    const walk = (x - startX);
+
+    const carouselInner = document.querySelector('.carousel-inner');
+    carouselInner.style.transform = `translateX(${walk}px)`;
+}
+
+function handleMouseOrTouchEnd(event) {
+    isDragging = false;
+
+    const x = event.type.includes('mouse') ? event.pageX : event.changedTouches[0].pageX;
+    const walk = (x - startX);
+    
+    if (walk > 50) {
+        moveCarousel(-1);
+    } else if (walk < -50) {
+        moveCarousel(1);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".card");
     const contents = document.querySelectorAll(".content");
+    const carouselInner = document.querySelector('.carousel-inner');
     let activeContent = null;
 
     cards.forEach(card => {
@@ -85,6 +116,15 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+    carouselInner.addEventListener('mousedown', handleMouseOrTouchStart);
+    carouselInner.addEventListener('mousemove', handleMouseOrTouchMove);
+    carouselInner.addEventListener('mouseup', handleMouseOrTouchEnd);
+    carouselInner.addEventListener('mouseleave', handleMouseOrTouchEnd);
+
+    carouselInner.addEventListener('touchstart', handleMouseOrTouchStart);
+    carouselInner.addEventListener('touchmove', handleMouseOrTouchMove);
+    carouselInner.addEventListener('touchend', handleMouseOrTouchEnd);
 });
 
 
@@ -134,17 +174,4 @@ toggles.forEach(toggle => {
   toggle.addEventListener('click', () => {
     toggle.parentNode.classList.toggle('active');
   });
-});
-
-// SOCIAL PANEL JS
-const floating_btn = document.querySelector('.floating-btn');
-const close_btn = document.querySelector('.close-btn');
-const social_panel_container = document.querySelector('.social-panel-container');
-
-floating_btn.addEventListener('click', () => {
-  social_panel_container.classList.toggle('visible')
-});
-
-close_btn.addEventListener('click', () => {
-  social_panel_container.classList.remove('visible')
 });

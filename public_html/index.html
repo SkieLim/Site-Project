@@ -72,6 +72,7 @@
 <!-- BANNER -->
     <div id="home">
         <div class="main-banner">
+            <div class="main-banner-gradient"></div>
             <div class="banner-text">SEGURANÇA ALIMENTAR</div>
         </div>    
     </div>
@@ -192,11 +193,15 @@
                     </div>
                 </div>
             </div>
-            <div class="nav-buttoms">
-                <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <!-- <div class="nav-buttoms">
                 <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-            </div>
+                <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            </div> -->
         </div>
+    </div>
+    <div class="linha-setas">
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
     <div class="contents">
         <div id="cozinha" class="content">
@@ -446,118 +451,122 @@
 <!-- END CARROSEL PAGINAS -->
 
 <!-- CARDAPIO -->
-    <div>
+    <div id="cardapio" class="div-cardapio">
         <div class="txt-area-cardapio">
             <div class="txt-cardapio">CARDAPIO:</div>
         </div>
         <div class="linha-cardapio">
-            <div class="card-cardapio">
-                <div class="dia-area">
-                    <a class="nome-dia">Segunda-Feira</a>
+            <div class="linha-card-table">
+                <div class="card-cardapio">
+                    <div class="dia-area">
+                        <a class="nome-dia">Segunda-Feira</a>
+                    </div>
+                    <div class="describ-cardapio">
+                        <div class="describ-cardapio-itens">
+                            <li><a>Principal:</a></li>
+                                <li><a>Arroz</a></li>
+                                <li><a>Feijão</a></li>
+                                <li><a>Carne ao Molho</a></li>
+                                <li><a>Canjiquinha</a></li>
+                            <div class="linha-horizontal"></div>
+                            <li><a>Complementos:</a></li>                            
+                                <br>
+                                <br>
+                                <li><a>Salada</a></li>
+                                <li><a>Suco</a></li>
+                        </div>
+                    </div>
                 </div>
-                <div class="describ-cardapio">
-                    <div class="describ-cardapio-itens">
-                        <li><a>Principal:</a></li>
-                            <li><a>Arroz</a></li>
-                            <li><a>Feijão</a></li>
-                            <li><a>Carne ao Molho</a></li>
-                            <li><a>Canjiquinha</a></li>
-                        <div class="linha-horizontal"></div>
-                        <a>Complementos:</a>                            
-                            <br>
-                            <br>
-                            <li><a>Salada</a></li>
-                            <li><a>Suco</a></li>
+
+                <div class="card-cardapio">
+                    <div class="dia-area">
+                        <a class="nome-dia">Terça-Feira</a>
+                    </div>
+                    <div class="describ-cardapio">
+                        <div class="describ-cardapio-itens">
+                            <li><a>Principal:</a></li>
+                                <li><a>Arroz</a></li>
+                                <li><a>Feijão</a></li>
+                                <li><a>Carne Bovina</a></li>
+                                <li><a>Macarrão</a></li>
+                            <div class="linha-horizontal"></div>
+                            <li><a>Complementos:</a></li>                            
+                                <br>
+                                <br>
+                                <li><a>Salada</a></li>
+                                <li><a>Suco</a></li>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="card-cardapio">
-                <div class="dia-area">
-                    <a class="nome-dia">Terça-Feira</a>
+            <div class="linha-card-table">
+                <div class="card-cardapio">
+                    <div class="dia-area">
+                        <a class="nome-dia">Quarta-Feira</a>
+                    </div>
+                    <div class="describ-cardapio">
+                        <div class="describ-cardapio-itens">
+                            <li><a>Principal:</a></li>
+                                <li><a>Arroz</a></li>
+                                <li><a>Feijoada</a></li>
+                                <li><a>Farofa</a></li>
+                                <li><a>ㅤ</a></li>
+                            <div class="linha-horizontal"></div>
+                            <li><a>Complementos:</a></li>                            
+                                <br>
+                                <br>
+                                <li><a>Salada</a></li>
+                                <li><a>Suco</a></li>
+                        </div>
+                    </div>
                 </div>
-                <div class="describ-cardapio">
-                    <div class="describ-cardapio-itens">
-                        <li><a>Principal:</a></li>
-                            <li><a>Arroz</a></li>
-                            <li><a>Feijão</a></li>
-                            <li><a>Carne Bovina</a></li>
-                            <li><a>Macarrão</a></li>
-                        <div class="linha-horizontal"></div>
-                        <a>Complementos:</a>                            
-                            <br>
-                            <br>
-                            <li><a>Salada</a></li>
-                            <li><a>Suco</a></li>
+
+                <div class="card-cardapio">
+                    <div class="dia-area">
+                        <a class="nome-dia">Quinta-Feira</a>
+                    </div>
+                    <div class="describ-cardapio">
+                        <div class="describ-cardapio-itens">
+                            <li><a>Principal:</a></li>
+                                <li><a>Arroz</a></li>
+                                <li><a>Feijão</a></li>
+                                <li><a>Empanado</a></li>
+                                <li><a>Nhoque c/ Frango</a></li>
+                            <div class="linha-horizontal"></div>
+                            <li><a>Complementos:</a></li>                            
+                                <br>
+                                <br>
+                                <li><a>Salada</a></li>
+                                <li><a>Suco</a></li>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="card-cardapio">
-                <div class="dia-area">
-                    <a class="nome-dia">Quarta-Feira</a>
-                </div>
-                <div class="describ-cardapio">
-                    <div class="describ-cardapio-itens">
-                        <li><a>Principal:</a></li>
-                            <li><a>Arroz</a></li>
-                            <li><a>Feijoada</a></li>
-                            <li><a>Farofa</a></li>
-                            <li><a>ㅤ</a></li>
-                        <div class="linha-horizontal"></div>
-                        <a>Complementos:</a>                            
-                            <br>
-                            <br>
-                            <li><a>Salada</a></li>
-                            <li><a>Suco</a></li>
+            <div class="linha-card-table">
+                <div class="card-cardapio">
+                    <div class="dia-area">
+                        <a class="nome-dia">Sexta-Feira</a>
+                    </div>
+                    <div class="describ-cardapio">
+                        <div class="describ-cardapio-itens">
+                            <li><a>Principal:</a></li>
+                                <li><a>Arroz</a></li>
+                                <li><a>Feijão</a></li>
+                                <li><a>Carne Moida</a></li>
+                                <li><a>Mandioca</a></li>
+                            <div class="linha-horizontal"></div>
+                            <li><a>Complementos:</a></li>                           
+                                <br>
+                                <br>
+                                <li><a>Salada</a></li>
+                                <li><a>Suco</a></li>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="card-cardapio">
-                <div class="dia-area">
-                    <a class="nome-dia">Quinta-Feira</a>
-                </div>
-                <div class="describ-cardapio">
-                    <div class="describ-cardapio-itens">
-                        <li><a>Principal:</a></li>
-                            <li><a>Arroz</a></li>
-                            <li><a>Feijão</a></li>
-                            <li><a>Empanado</a></li>
-                            <li><a>Nhoque c/ Frango</a></li>
-                        <div class="linha-horizontal"></div>
-                        <a>Complementos:</a>                            
-                            <br>
-                            <br>
-                            <li><a>Salada</a></li>
-                            <li><a>Suco</a></li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-cardapio">
-                <div class="dia-area">
-                    <a class="nome-dia">Sexta-Feira</a>
-                </div>
-                <div class="describ-cardapio">
-                    <div class="describ-cardapio-itens">
-                        <li><a>Principal:</a></li>
-                            <li><a>Arroz</a></li>
-                            <li><a>Feijão</a></li>
-                            <li><a>Carne Moida</a></li>
-                            <li><a>Mandioca</a></li>
-                        <div class="linha-horizontal"></div>
-                        <a>Complementos:</a>                            
-                            <br>
-                            <br>
-                            <li><a>Salada</a></li>
-                            <li><a>Suco</a></li>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+
 <!-- END CARDAPIO -->
 
 <!-- CTA AGENDA -->
@@ -584,9 +593,6 @@
             <div>
                 <div class="txt-area-restaurant">
                     <div class="txt-restaurant">NOSSOS RESTAURANTES</div>
-                </div>
-                <div class="txt-subarea-paginas">
-                    <div class="subtitle-paginas">Localizações:</div>
                 </div>
             </div>
             <div class="carousel-area-rest">
@@ -650,10 +656,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-buttoms">
-                    <button class="prevrest" onclick="moveRestCarousel(-1)">&#10094;</button>
-                    <button class="nextrest" onclick="moveRestCarousel(1)">&#10095;</button>
-                </div>
+            </div>
+            <div class="linha-setas-rest">
+                <button class="prevrest" onclick="moveRestCarousel(-1)">&#10094;</button>
+                <button class="nextrest" onclick="moveRestCarousel(1)">&#10095;</button>
             </div>
         </div>
 
@@ -661,8 +667,8 @@
 
 <!-- CONTACT FORM -->
         <div>
-            <div class="txt-area-restaurant">
-                <div class="txt-restaurant">FALE CONOSCO:</div>
+            <div class="txt-area-form">
+                <div class="txt-form">FALE CONOSCO:</div>
             </div>
         </div>
         <div class="forms-line">
@@ -690,7 +696,7 @@
 <!-- END CONTACT FORM-->
 
 <!-- FAQ -->
-    <div>
+    <div class="faq-area">
         <center>
             <h1>FAQ</h1>
         </center>
