@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 
-body{
+body{    
+    display: block;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     font-family:'Poppins';
@@ -130,30 +133,6 @@ body{
     width: auto;
 }
 
-/* .main-banner{
-    width: auto;
-    height: 945px;
-    overflow: hidden;
-    position: relative;
-}
-
-.banner-img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.main-banner::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
-    pointer-events: none;
-} */
-
 .main-banner{
     display: flex;
     align-items: center;
@@ -165,6 +144,10 @@ body{
     background-size: cover;
     background-position: center bottom;
     background-color: #726349;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .main-banner::after {
@@ -201,10 +184,15 @@ body{
     font-size: 70px;
 }
 
+.txt-box-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10%;
+}
+
 .txt-box{
-    position: absolute;
-    top: 65%;
-    left: 18%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -628,6 +616,156 @@ font-weight: 900;
     right: 150px;
 }
 
+.forms-line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-area{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    border-radius: 30px;
+    margin: 2em;
+}
+
+.img-container-forms{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.img-container-forms img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+.forms {
+    color: #333;
+    margin: 0 auto;
+    width: 50%;
+    padding: 30px 50px 20px 50px;
+}
+
+.label-form {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-form, .textarea-form {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.button-form {
+    padding: 30px 65px 30px 65px;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #726349;
+    border-radius: 30px;
+    border: 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.button-form:hover {
+    color: white;
+    background-color: rgb(119, 105, 81)
+}
+
+.button-form:active{
+    background-color: rgb(119, 105, 81);
+    box-shadow: 2px rgba(0, 0, 0, 0.15);
+    transform: translateY(4px);
+}
+
+.faqs-container {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+.faq {
+    background-color: #C8963F;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+.faq.active {
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    display: none;
+    margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.faq-toggle {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.faq-toggle:focus {
+    outline: none;
+}
+
+.faq.active .faq-toggle {
+    background-color: #9FA4A8;
+}
+
+.faq-toggle .fa-times {
+    display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+    display: block;
+}
+
+.faq-toggle .fa-chevron-down {
+    color: #fff;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+}
+
 .footer{
     background-color: #C8963F;
     padding: 50px 0;
@@ -751,4 +889,44 @@ font-weight: 900;
 .footer-social{
     margin-right: -150px;
     margin-left: 50px;
+}
+
+@media screen and (max-width: 1545px){
+    .main-banner{
+        width: 110%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .main-banner{
+        width: 142%;
+    }
+    
+}
+
+@media screen and (max-width: 755px) {
+
+    .main-banner{
+        width: 330%;
+        height: 820px;
+    }
+
+    .main-banner::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 330%;
+        height: 20%;
+        background: linear-gradient(to top, rgba(240, 239, 239, 1), rgba(255, 255, 255, 0));
+        pointer-events: none;
+        
+    }
+
+    .txt-box{
+        position: absolute;
+        width: 800px;
+        left: 40%;
+    }
 }
