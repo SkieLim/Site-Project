@@ -133,6 +133,33 @@ body{
     width: auto;
 }
 
+.medias-socia-header{
+    margin-top: 30px;
+}
+
+.medias-socias-header a{
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+
+.medias-socias-header a i{
+    font-size: 20px;
+}
+
+.medias-socias-header a:hover{
+    color: #C8963F;
+    background-color: white;
+}
+
 .main-banner{
     display: flex;
     align-items: center;
